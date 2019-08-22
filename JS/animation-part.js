@@ -22,3 +22,4 @@ t.fromTo(ele4Cover, 1, { width: '100%' }, { width: '0%', ease: Power2.easeInOut 
     .fromTo(Backgroundimage, 1, { height: '0%' }, { height: '100%', ease: Power2.easeInOut })
     .from(discriptionh1, 1, { opacity: '0' }, '-=1.1')
     .from(discriptionp, 1, { opacity: '0' }, '-=1.1');
+

@@ -39,6 +39,33 @@ main {
     grid-row: 2/3;
 }
 
+.ele1-cover {
+    background: #000000;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.ele2-cover {
+    background: #ffffff;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.ele4-cover {
+    background: #ff7c24;
+    position: absolute;
+    width: 100%;
+    height: 30vh;
+    z-index: 5;
+    pointer-events: none;
+}
+
 /*MAIN GRID PROPERTIES FOR DESKTOP  END.....*/
 
 /*MAIN GRID PROPERTIES FOR MOBILE*/
@@ -85,7 +112,7 @@ main {
     z-index: 1;
     padding-top: 4%;
     padding-bottom: 4%;
-    background: rgb(255, 255, 255);
+    background: white;
 }
 
 .grid-ele1::after {
@@ -94,24 +121,15 @@ main {
     height: 100%;
     width: 100%;
     top: 0;
-    background: linear-gradient(to top left, rgba(255, 255, 255, 0.808), transparent);
-
+    background: linear-gradient(to top left, white, transparent);
 }
 
-.grid-ele1::before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.781), transparent);
 
-}
 
 /*element2 properties*/
 .grid-ele2 {
     position: relative;
-    background: #f9f5f2;
+    background: #000000;
 }
 
 .grid-ele2 img {
@@ -130,7 +148,7 @@ main {
     left: 5%;
     z-index: 1;
     padding: 5%;
-    background: rgb(255, 253, 253);
+    background: rgb(255, 255, 255);
 }
 
 .discription h1 {
@@ -142,6 +160,55 @@ main {
 }
 
 /*element4 properties*/
-.grid-ele4{
-    
+.grid-ele4 {
+    position: relative;
+}
+
+.grid-ele4 h2 {
+    color: #000000;
+    text-align: center;
+    margin: 1%;
+}
+
+.design-styles {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.style1-button {
+    position: relative;
+    padding: 2%;
+    background: rgb(0, 0, 0);
+}
+
+.style1-button h3 {
+    color: white;
+}
+
+.style2-button h3 {
+    color: white;
+}
+
+.style2-button {
+    position: relative;
+    padding: 1%;
+    background: rgb(0, 0, 0);
+}
+
+.grid-ele1 {
+    transition: background .5 ease;
+}
+
+.grid-ele2 {
+    transition: background .5 ease;
+}
+
+.grid-ele4 {
+    transition: background .5 ease;
 }
