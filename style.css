@@ -2,78 +2,104 @@
     margin: 0;
     padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: white;
 }
 
-body {
-    background: black;
-}
-
-.bg {
-    position: absolute;
-    height: 100vh;
-    width: 100%;
-    top: 0px;
-    background: linear-gradient(to bottom left, #df8632, rgb(255, 183, 49));
-    z-index: -10;
-}
-
-nav {
+/*MAIN GRID PROPERTIES FOR DESKTOP*/
+main {
     display: grid;
-    grid-template-columns: 10% 1fr 1fr 1fr 10%;
-    height: 10vh;
-    padding-top: 2%;
+    height: 100vh;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 70% 30%;
 }
 
-.title {
-    grid-column: 2/3;
-    justify-self: center;
-    align-self: center;
-    font-size: 2em;
+.grid-ele1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
 }
 
-img {
+.grid-ele1 iframe {
     width: 100%;
     height: 100%;
-    object-fit: cover;
 }
 
-section {
-    display: flex;
-    height: 80vh;
-    width: 100%;
-    justify-content: center;
-
+.grid-ele2 {
+    background: rgb(218, 218, 218);
+    grid-column: 2/3;
+    grid-row: 1/2;
 }
 
-.holder {
+.grid-ele3 {
+    background: rgb(206, 206, 206);
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.grid-ele4 {
+    background: black;
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+/*MAIN GRID PROPERTIES FOR DESKTOP  END.....*/
+
+/*MAIN GRID PROPERTIES FOR MOBILE*/
+@media only screen and (max-width:1000px) {
+    main {
+        display: grid;
+        width: 100%;
+        height: 200vh;
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+
+    .grid-ele1 {}
+
+    .grid-ele1 iframe {
+        width: 100%;
+        height: 100%;
+    }
+
+    .grid-ele2 {
+        background: rgb(218, 218, 218);
+    }
+
+    .grid-ele3 {
+        background: rgb(206, 206, 206);
+    }
+
+    .grid-ele4 {
+        background: black;
+    }
+}
+
+/*MAIN GRID PROPERTIES FOR MOBILE  END.....*/
+
+/*element1 properties*/
+.grid-ele1 {
     position: relative;
-    align-self: center;
-    height: 90%;
-    width: 100%;
 }
-
-.holder::after {
+.latest-project-link {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    text-align: center;
+    text-decoration: none;
+    color: rgba(255, 176, 29, 0.877);
+    z-index: 1;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    background: rgba(0, 0, 0, 0.692);
+}
+.grid-ele1::after {
     content: "";
     position: absolute;
-    top: 0;
     height: 100%;
     width: 100%;
-    background: #00000071;
+    top: 0;
+    background: rgba(0, 0, 0, 0.452);
 }
 
-.discription {
-    position: absolute;
-    bottom: 10%;
-    left: 10%;
-    z-index: 1;
-    ;
-}
-
-.discription h1 {
-    font-size: 5rem;
-}
-
-.discription p {
-    font-size: 2rem;
+/*element2 properties*/
+.grid-ele2{
+    
 }
