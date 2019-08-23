@@ -1,7 +1,7 @@
 :root {
     --bgtheme: #ffffff;
     --lightbgtheme: #c7c7c7;
-    /* basically primary color */
+    /*primary color */
     --buttonbg: #2962ff;
     /* accent color */
     --buttontext: white;
@@ -43,8 +43,8 @@ body {
     -moz-box-shadow: 0 -1vh 30px 10px rgba(0, 0, 0, 0.5);
     -webkit-box-shadow: 0 -1vh 30px 10px rgba(0, 0, 0, 0.5);
     box-shadow: 0 -1vh 30px 10px rgba(0, 0, 0, 0.5);
-    -webkit-transition: bottom .2s ease, top .2s ease, margin .2s ease, border-radius .2s ease;
-    transition: bottom .2s ease, top .2s ease, margin .2s ease, border-radius .2s ease;
+    -webkit-transition: background-color 500ms ease, bottom .2s ease, top .2s ease, margin .2s ease, border-radius .2s ease;
+    transition: background-color 500ms ease, bottom .2s ease, top .2s ease, margin .2s ease, border-radius .2s ease;
 }
 
 .latest-project-link a {
@@ -54,7 +54,6 @@ body {
     font-weight: bold;
     text-decoration: none;
     color: var(--textColor);
-    transition: font-size .2s ease;
 }
 
 /*element2 properties*/
@@ -112,8 +111,8 @@ body {
     -moz-box-shadow: var(--boxshadow);
     -webkit-box-shadow: var(--boxshadow);
     box-shadow: var(--boxshadow);
-    -webkit-transition: margin .2s ease, border-radius .2s ease;
-    transition: margin .2s ease, border-radius .2s ease;
+    -webkit-transition: background-color 500ms ease, margin .2s ease, border-radius .2s ease;
+    transition: background-color 500ms ease, margin .2s ease, border-radius .2s ease;
 }
 
 .grid-ele4 h2 {

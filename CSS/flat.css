@@ -10,7 +10,6 @@
     --innerboxshadow: inset 30px 30px 10px rgba(0, 0, 0, 0.5);
 
 }
-
 /*element1 properties*/
 .grid-ele1 {
     position: relative;
@@ -29,15 +28,14 @@
     padding-top: 4%;
     padding-bottom: 4%;
     background: var(--bgtheme);
-    -webkit-transition: bottom .2s ease, top .2s ease, margin .2s ease, border-radius .2s ease;
-    transition: bottom .2s ease, top .2s ease, margin .2s ease, border-radius .2s ease;
+    -webkit-transition: background-color 500ms ease, bottom .2s ease, top .2s ease, margin .2s ease, border-radius .2s ease;
+    transition: background-color 500ms ease, bottom .2s ease, top .2s ease, margin .2s ease, border-radius .2s ease;
 }
 
 .latest-project-link a {
     font-weight: bold;
     text-decoration: none;
     color: var(--textColor);
-    transition: font-size .2s ease;
 }
 
 .grid-ele1::after {
@@ -48,6 +46,7 @@
     top: 0;
     background: linear-gradient(to top left, rgba(var(--bgtheme), 0.808), transparent);
 }
+
 /*element2 properties*/
 .grid-ele2 {
     position: relative;
@@ -87,8 +86,9 @@
 .grid-ele4 {
     background: var(--bgtheme);
     position: relative;
-    -webkit-transition: margin .2s ease, border-radius .2s ease;
-    transition: margin .2s ease, border-radius .2s ease;
+
+    -webkit-transition: background-color 500ms ease, margin .2s ease, border-radius .2s ease;
+    transition: background-color 500ms ease, margin .2s ease, border-radius .2s ease;
 }
 
 .grid-ele4 h2 {
