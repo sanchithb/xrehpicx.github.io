@@ -299,12 +299,3 @@ main {
 .grid-ele4 {
     transition: background .5 ease;
 } */
-.main-cover {
-    position: absolute;
-    
-    width: 0;
-    height: 100vh;
-    background: var(--bgtheme);
-    z-index: 10;
-    pointer-events: none;
-}
