@@ -6,21 +6,25 @@
 }
 
 :root {
-
-    --buttonbg: white;
-    --buttontext: black;
-    --textColor: white;
-    --flatdarkbutton: 2%;
-    --flatlightbutton: 1%;
-    --bgtheme: black;
+    --bgtheme: #ffffff;
+    --lightbgtheme: #c7c7c7;
+    /* basically primary color */
+    --buttonbg: #2962ff;
+    /* accent color */
+    --buttontext: white;
+    --textColor: rgb(0, 0, 0);
+    --materialdarkbutton: 2%;
+    --materiallightbutton: 1%;
     --elemargin: 1rem;
+    --buttonshadow: 10px 10px 50px 1px rgba(0, 0, 0, 0.5);
     --boxshadow: 0 30px 30px 10px rgba(0, 0, 0, 0.5);
-    --innerboxshadow: inset 30px 30px 10px rgba(0, 0, 0, 0.5);
-
+    --innerboxshadow: inset 30px 30px 50px rgba(0, 0, 0, 0.5);
 }
 
 body {
-    background: var(--bgtheme);
+    height: 100vh;
+    width: 100%;
+    background: var(--lightbgtheme);
 }
 
 /*MAIN GRID PROPERTIES FOR DESKTOP*/
@@ -30,7 +34,6 @@ main {
     grid-template-columns: 30% 70%;
     grid-template-rows: 70% 30%;
 }
-
 
 .grid-ele1 {
     grid-column: 1/2;
@@ -47,8 +50,6 @@ main {
     grid-row: 1/2;
 }
 
-
-
 .grid-ele4 {
     background: var(--bgtheme);
     grid-column: 2/3;
@@ -56,7 +57,7 @@ main {
 }
 
 .ele1-cover {
-    background: #222222;
+    background: var(--bgtheme);
     position: absolute;
     width: 100%;
     height: 100%;
@@ -65,7 +66,7 @@ main {
 }
 
 .ele2-cover {
-    background: #000000;
+    background: var(--bgtheme);
     position: absolute;
     width: 100%;
     height: 100%;
@@ -74,23 +75,12 @@ main {
 }
 
 .ele4-cover {
-    background: #ff7c24;
+    background: var(--buttonbg);
     position: absolute;
     width: 100%;
     height: 30vh;
     z-index: 5;
     pointer-events: none;
-}
-
-.design-styles {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
 }
 
 /*MAIN GRID PROPERTIES FOR DESKTOP  END.....*/
@@ -120,6 +110,12 @@ main {
         grid-column: 1/2;
     }
 
+
+
+}
+
+/* setting buttons layout */
+@media only screen and (orientation:portrait) {
     .design-styles {
         position: absolute;
         display: grid;
@@ -132,9 +128,6 @@ main {
         flex-wrap: wrap;
     }
 
-}
-
-@media only screen and (orientation:portrait) {
     .button {
         display: flex;
         height: 5vh;
@@ -151,47 +144,61 @@ main {
 }
 
 /*MAIN GRID PROPERTIES FOR MOBILE  END.....*/
+.design-styles {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
 
 /*element1 properties*/
 .grid-ele1 {
     position: relative;
+    margin: var(--elemargin);
+    overflow: hidden;
+    border-radius: 1vh;
+    -moz-box-shadow: var(--boxshadow);
+    -webkit-box-shadow: var(--boxshadow);
+    box-shadow: var(--boxshadow);
 }
 
 .latest-project-link {
     position: absolute;
     width: 100%;
-    top: 50%;
-    text-align: center;
-    text-decoration: none;
-    color: var(--textColor);
-    ;
+    height: 20vh;
+    bottom: 0;
     z-index: 1;
     padding-top: 4%;
     padding-bottom: 4%;
     background: var(--bgtheme);
+    -moz-box-shadow: 0 -1vh 30px 10px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 -1vh 30px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 -1vh 30px 10px rgba(0, 0, 0, 0.5);
 }
 
 .latest-project-link a {
+    position: absolute;
+    left: 5%;
+    font-size: 5vh;
     font-weight: bold;
     text-decoration: none;
     color: var(--textColor);
 }
 
-.grid-ele1::after {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    background: linear-gradient(to top left, rgba(var(--bgtheme), 0.808), transparent);
-}
-
-
-
 /*element2 properties*/
 .grid-ele2 {
     position: relative;
     background: var(--bgtheme);
+    margin: var(--elemargin);
+    overflow: hidden;
+    border-radius: 1vh;
+    -moz-box-shadow: var(--boxshadow);
+    -webkit-box-shadow: var(--boxshadow);
+    box-shadow: var(--boxshadow);
 }
 
 .grid-ele2 img {
@@ -210,7 +217,11 @@ main {
     left: 5%;
     z-index: 1;
     padding: 5%;
+    border-radius: 1vh;
     background: var(--bgtheme);
+    -moz-box-shadow: var(--innerboxshadow);
+    -webkit-box-shadow: var(--innerboxshadow);
+    box-shadow: var(--innerboxshadow);
 }
 
 .discription h1 {
@@ -224,12 +235,20 @@ main {
 /*element4 properties*/
 .grid-ele4 {
     position: relative;
+    margin: var(--elemargin);
+    overflow: hidden;
+    border-radius: 1vh;
+    -moz-box-shadow: var(--boxshadow);
+    -webkit-box-shadow: var(--boxshadow);
+    box-shadow: var(--boxshadow);
 }
 
 .grid-ele4 h2 {
-    color: var(--textColor);
+    position: absolute;
+    bottom: 5%;
+    color: var(--lightbgtheme);
+    font-size: 30vh;
     text-align: center;
-    margin: 1%;
 }
 
 .button {
@@ -239,32 +258,33 @@ main {
     color: var(--buttontext);
     background: var(--buttonbg);
     cursor: pointer;
+    border-radius: 1vh;
+    -moz-box-shadow: var(--buttonshadow);
+    -webkit-box-shadow: var(--buttonshadow);
+    box-shadow: var(--buttonshadow);
     align-items: center;
     transition: padding 250ms ease;
 }
 
 
-.style1-button {
-    padding: var(--flatdarkbutton);
+.style4-button {
+    padding: var(--materialdarkbutton);
 }
 
-.style2-button {
-    padding: var(--flatlightbutton);
+.style3-button {
+    padding: var(--materiallightbutton);
 }
 
 /* transition */
 
 /* .grid-ele1 {
-    transition: padding 250ms ease;
     transition: background .5 ease;
 }
 
 .grid-ele2 {
-    transition: padding 250ms ease;
     transition: background .5 ease;
 }
 
 .grid-ele4 {
-    transition: padding 250ms ease;
     transition: background .5 ease;
 } */

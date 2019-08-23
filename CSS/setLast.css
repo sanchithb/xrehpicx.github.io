@@ -4,3 +4,18 @@
     -o-transition: background-color 500ms ease;
     transition: background-color 500ms ease;
 }
+
+.grid-ele1 {
+    transition: padding 250ms ease;
+
+}
+
+.grid-ele2 {
+    transition: padding 250ms ease;
+
+}
+
+.grid-ele4 {
+    transition: padding 250ms ease;
+
+}
