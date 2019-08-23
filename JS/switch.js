@@ -52,22 +52,40 @@ var styles = [
 const changeStyleSheet = styleSheet => {
     styleSheet = './CSS/' + styleSheet + '.css'
     let styles = document.querySelectorAll('link');
+    var toSetLink;
+    var toDisable = [];
     styles.forEach(element => {
         if (element.getAttribute("href") == styleSheet) {
             element.media = '';
+            /* toSetLink.push(element); */
             previousStyleSheet = element;
+        } else if (element.id === 'exclude') {
+            console.log(element);
         }
-        else { element.media = 'none'; }
+        else {
+            element.media = 'none';
+            /* toDisable.push(element); */
+        }
     });
-    document.querySelector('.trans').media='';
+    /* document.querySelector('.trans').media=''; */
+
 };
+const animTo=(t,cover)=>{
+    t.fromTo(cover, .5, { width: '0%' }, { width: '100%', ease: Power2.easeInOut }).fromTo(cover, .5, { width: '100%' }, { width: '0%', ease: Power2.easeInOut },'+=.05');
+}
 const reloadStyle = () => {
     var Style = styles.reduce((newest, style) => {
         return (newest.state || 0) > style.state ? newest : style;
     }, {});
+    const t = new TimelineMax();
+    var cover = document.querySelector('.main-cover');
     if (Style.styleName === 'flat') {
-        if (Style.styleName != previousStyleSheet.id)
-            changeStyleSheet(Style.styleName);
+        if (Style.styleName != previousStyleSheet.id) {
+            animTo(t,cover);
+            setTimeout(()=>{
+                changeStyleSheet(Style.styleName);
+            }, 550);
+        }
         if (Style.theme === 'dark') {
             setCSSvar('bgtheme', Style.dark.bgtheme);
             setCSSvar('textColor', Style.dark.textColor);
@@ -85,8 +103,13 @@ const reloadStyle = () => {
             setCSSvar('flatlightbutton', '2%');
         }
     } else if (Style.styleName === 'material') {
-        if (Style.styleName != previousStyleSheet.id)
-            changeStyleSheet(Style.styleName);
+        if (Style.styleName != previousStyleSheet.id) {
+            animTo(t, cover);
+            setTimeout(()=>{
+                changeStyleSheet(Style.styleName);
+            }, 550);
+        }
+
         if (Style.theme === 'dark') {
             setCSSvar('bgtheme', Style.dark.bgtheme);
             setCSSvar('lightbgtheme', Style.dark.lightbgtheme)
