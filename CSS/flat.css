@@ -1,12 +1,21 @@
-/* LIGHT FLAT THEME */
 * {
     margin: 0;
     padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+:root {
+    --bgtheme: black;
+    --buttonbg: white;
+    --buttontext: black;
+    --textColor: white;
+    --flatdarkbutton: 2%;
+    --flatlightbutton: 1%;
 }
 
 body {
-    background: white;
+    background: var(--bgtheme);
 }
 
 /*MAIN GRID PROPERTIES FOR DESKTOP*/
@@ -16,6 +25,7 @@ main {
     grid-template-columns: 30% 70%;
     grid-template-rows: 70% 30%;
 }
+
 
 .grid-ele1 {
     grid-column: 1/2;
@@ -35,13 +45,13 @@ main {
 
 
 .grid-ele4 {
-    background: white;
+    background: var(--bgtheme);
     grid-column: 2/3;
     grid-row: 2/3;
 }
 
 .ele1-cover {
-    background: #000000;
+    background: #222222;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -50,7 +60,7 @@ main {
 }
 
 .ele2-cover {
-    background: #ffffff;
+    background: #000000;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -109,11 +119,12 @@ main {
     top: 50%;
     text-align: center;
     text-decoration: none;
-    color: rgba(255, 176, 29, 0.877);
+    color: var(--textColor);
+    ;
     z-index: 1;
     padding-top: 4%;
     padding-bottom: 4%;
-    background: white;
+    background: var(--bgtheme);
 }
 
 .grid-ele1::after {
@@ -122,7 +133,7 @@ main {
     height: 100%;
     width: 100%;
     top: 0;
-    background: linear-gradient(to top left, white, transparent);
+    background: linear-gradient(to top left, rgba(var(--bgtheme), 0.808), transparent);
 }
 
 
@@ -130,7 +141,7 @@ main {
 /*element2 properties*/
 .grid-ele2 {
     position: relative;
-    background: #000000;
+    background: var(--bgtheme);
 }
 
 .grid-ele2 img {
@@ -144,12 +155,12 @@ main {
 
 .discription {
     position: absolute;
-    color: #000000;
+    color: var(--textColor);
     top: 5%;
     left: 5%;
     z-index: 1;
     padding: 5%;
-    background: rgb(255, 255, 255);
+    background: var(--bgtheme);
 }
 
 .discription h1 {
@@ -166,7 +177,7 @@ main {
 }
 
 .grid-ele4 h2 {
-    color: #000000;
+    color: var(--textColor);
     text-align: center;
     margin: 1%;
 }
@@ -181,18 +192,26 @@ main {
     justify-content: space-around;
     flex-wrap: wrap;
 }
-.button{
+
+.button {
     position: relative;
     padding: 1%;
-    background:black;
-    color: white;
+    color: var(--buttontext);
+    background: var(--buttonbg);
+    cursor: pointer;
+    transition: padding .5s ease;
 }
 
 .style1-button {
-    padding: 2%;
+    padding: var(--flatdarkbutton);
 }
 
-/* TRANSITION BW THEMES */
+.style2-button {
+    padding: var(--flatlightbutton);
+}
+
+/* transition */
+
 .grid-ele1 {
     transition: background .5 ease;
 }
