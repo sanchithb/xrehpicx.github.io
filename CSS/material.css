@@ -1,10 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
-}
-
 :root {
     --bgtheme: #ffffff;
     --lightbgtheme: #c7c7c7;
@@ -22,139 +15,7 @@
 }
 
 body {
-    height: 100vh;
-    width: 100%;
     background: var(--lightbgtheme);
-    -webkit-transition: width .2s, height .2s;
-    transition: width .2s, height .2s;
-}
-
-/*MAIN GRID PROPERTIES FOR DESKTOP*/
-main {
-    display: grid;
-    height: 100vh;
-    grid-template-columns: 30% 70%;
-    grid-template-rows: 70% 30%;
-}
-
-.grid-ele1 {
-    grid-column: 1/2;
-    grid-row: 1/3;
-}
-
-.grid-ele1 iframe {
-    width: 100%;
-    height: 100%;
-}
-
-.grid-ele2 {
-    grid-column: 2/3;
-    grid-row: 1/2;
-}
-
-.grid-ele4 {
-    background: var(--bgtheme);
-    grid-column: 2/3;
-    grid-row: 2/3;
-}
-
-.ele1-cover {
-    background: var(--bgtheme);
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 5;
-    pointer-events: none;
-}
-
-.ele2-cover {
-    background: var(--bgtheme);
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 5;
-    pointer-events: none;
-}
-
-.ele4-cover {
-    background: var(--buttonbg);
-    position: absolute;
-    width: 100%;
-    height: 30vh;
-    z-index: 5;
-    pointer-events: none;
-}
-
-/*MAIN GRID PROPERTIES FOR DESKTOP  END.....*/
-
-/*MAIN GRID PROPERTIES FOR MOBILE*/
-@media only screen and (orientation:portrait) {
-    main {
-        display: grid;
-        width: 100%;
-        height: 200vh;
-        grid-template-columns: 1fr;
-        grid-template-rows: 100vh 100vh 100vh;
-    }
-
-    .grid-ele1 {
-        grid-row: 2/3;
-        grid-column: 1/2;
-    }
-
-    .grid-ele2 {
-        grid-row: 1/2;
-        grid-column: 1/2;
-    }
-
-    .grid-ele4 {
-        grid-row: 3/4;
-        grid-column: 1/2;
-    }
-
-
-
-}
-
-/* setting buttons layout */
-@media only screen and (orientation:portrait) {
-    .design-styles {
-        position: absolute;
-        display: grid;
-        grid-template-columns: 1fr;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        align-items: center;
-        justify-content: space-around;
-        flex-wrap: wrap;
-    }
-
-    .button {
-        display: flex;
-        height: 5vh;
-        width: 50vw;
-        position: relative;
-        padding: 1%;
-        color: var(--buttontext);
-        background: var(--buttonbg);
-        cursor: pointer;
-        justify-self: center;
-        align-items: center;
-        transition: padding 250ms ease;
-    }
-}
-
-/*MAIN GRID PROPERTIES FOR MOBILE  END.....*/
-.design-styles {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
 }
 
 /*element1 properties*/
@@ -244,6 +105,7 @@ main {
 /*element4 properties*/
 .grid-ele4 {
     position: relative;
+    background: var(--bgtheme);
     margin: var(--elemargin);
     overflow: hidden;
     border-radius: 1vh;
@@ -285,17 +147,3 @@ main {
 .style3-button {
     padding: var(--materiallightbutton);
 }
-
-/* transition */
-
-/* .grid-ele1 {
-    transition: background .5 ease;
-}
-
-.grid-ele2 {
-    transition: background .5 ease;
-}
-
-.grid-ele4 {
-    transition: background .5 ease;
-} */

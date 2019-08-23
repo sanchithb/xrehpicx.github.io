@@ -1,10 +1,3 @@
-/* const main = document.querySelector('main');
-
-const ele1 = document.querySelector('.grid-ele1');
-const ele2 = document.querySelector('.grid-ele2');
-const ele3 = document.querySelector('.grid-ele3');
-const ele4 = document.querySelector('.grid-ele4');
- */
 const ele1Cover = document.querySelector('.ele1-cover');
 const ele2Cover = document.querySelector('.ele2-cover');
 const ele4Cover = document.querySelector('.ele4-cover');
