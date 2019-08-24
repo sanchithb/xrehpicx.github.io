@@ -135,6 +135,7 @@ body {
     -webkit-box-shadow: var(--buttonshadow);
     box-shadow: var(--buttonshadow);
     align-items: center;
+    -webkit-transition: padding 250ms ease;
     transition: padding 250ms ease;
 }
 

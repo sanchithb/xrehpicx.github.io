@@ -10,6 +10,7 @@
     --innerboxshadow: inset 30px 30px 10px rgba(0, 0, 0, 0.5);
 
 }
+
 /*element1 properties*/
 .grid-ele1 {
     position: relative;
@@ -105,6 +106,7 @@
     background: var(--buttonbg);
     cursor: pointer;
     align-items: center;
+    -webkit-transition: padding 250ms ease;
     transition: padding 250ms ease;
 }
 

@@ -1,5 +1,5 @@
 var buttons = document.querySelectorAll('.button');
-var previousStyleSheet = document.querySelector('#flat');
+var previousStyleSheet;
 const getButton = (style, theme) => {
     var b;
     buttons.forEach((element) => {
@@ -25,7 +25,6 @@ var styles = [
             buttonbg: 'black',
             buttontext: 'white',
         },
-        button: { dark: getButton('flat', 'dark'), light: getButton('flat', 'light') },
         state: 1,
     },
     {
@@ -45,30 +44,14 @@ var styles = [
             buttonbg: '#2962ff',
             buttontext: 'white',
         },
-        button: { dark: getButton('material', 'dark'), light: getButton('material', 'light') },
         state: 0
     }
 ]
 const changeStyleSheet = styleSheet => {
+    previousStyleSheet = styleSheet;
     styleSheet = './CSS/' + styleSheet + '.css'
-    let styles = document.querySelectorAll('link');
-    var toSetLink;
-    var toDisable = [];
-    styles.forEach(element => {
-        if (element.getAttribute("href") == styleSheet) {
-            element.media = '';
-            /* toSetLink.push(element); */
-            previousStyleSheet = element;
-        } else if (element.id === 'exclude') {
-            console.log(element);
-        }
-        else {
-            element.media = 'none';
-            /* toDisable.push(element); */
-        }
-    });
-    /* document.querySelector('.trans').media=''; */
-
+    let styles = document.querySelector('#flat');
+    styles.href = styleSheet;
 };
 
 const reloadStyle = () => {
@@ -76,11 +59,8 @@ const reloadStyle = () => {
         return (newest.state || 0) > style.state ? newest : style;
     }, {});
     if (Style.styleName === 'flat') {
-        if (Style.styleName != previousStyleSheet.id) {
-            
-            
-                changeStyleSheet(Style.styleName);
-            
+        if (Style.styleName != previousStyleSheet) {
+            changeStyleSheet(Style.styleName);
         }
         if (Style.theme === 'dark') {
             setCSSvar('bgtheme', Style.dark.bgtheme);
@@ -99,10 +79,8 @@ const reloadStyle = () => {
             setCSSvar('flatlightbutton', '2%');
         }
     } else if (Style.styleName === 'material') {
-        if (Style.styleName != previousStyleSheet.id) {
-            
-                changeStyleSheet(Style.styleName);
-            
+        if (Style.styleName != previousStyleSheet) {
+            changeStyleSheet(Style.styleName);
         }
 
         if (Style.theme === 'dark') {

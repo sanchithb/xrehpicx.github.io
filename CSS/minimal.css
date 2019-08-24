@@ -1,0 +1,61 @@
+:root {
+    --buttonbg: black;
+    --buttontext: white;
+    --textColor: black;
+    --materialdarkbutton: 2%;
+    --materiallightbutton: 1%;
+    --bgtheme:white;
+    --elemargin: 0rem;
+    --boxshadow: 0 30px 30px 10px rgba(0, 0, 0, 0.5);
+    --innerboxshadow: inset 30px 30px 10px rgba(0, 0, 0, 0.5);
+
+}
+
+body {
+    background: var(--bgtheme);
+}
+
+main {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 100vh;
+}
+
+/*element1 properties*/
+.grid-ele1 {
+    opacity: 0;
+}
+
+.latest-project-link {}
+
+.latest-project-link a {}
+
+/*element2 properties*/
+.grid-ele2 {}
+
+.grid-ele2 img {
+    opacity: 0;
+}
+
+.discription {}
+
+.discription h1 {}
+
+.discription p {}
+
+/*element4 properties*/
+.grid-ele4 {}
+
+.grid-ele4 h2 {}
+
+.button {}
+
+
+.style1-button {
+    padding: var(--flatdarkbutton);
+}
+
+.style2-button {
+    padding: var(--flatlightbutton);
+}
