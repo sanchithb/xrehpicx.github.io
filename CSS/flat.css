@@ -29,8 +29,8 @@
     padding-top: 4%;
     padding-bottom: 4%;
     background: var(--bgtheme);
-    -webkit-transition: background-color 500ms ease, bottom .2s ease, top .2s ease, margin .2s ease, border-radius .2s ease;
-    transition: background-color 500ms ease, bottom .2s ease, top .2s ease, margin .2s ease, border-radius .2s ease;
+    -webkit-transition: background-color var(--transitiontime) ease, bottom .2s ease, top .2s ease, margin .2s ease, border-radius .2s ease;
+    transition: background-color var(--transitiontime) ease, bottom .2s ease, top .2s ease, margin .2s ease, border-radius .2s ease;
 }
 
 .latest-project-link a {
@@ -88,8 +88,8 @@
     background: var(--bgtheme);
     position: relative;
 
-    -webkit-transition: background-color 500ms ease, margin .2s ease, border-radius .2s ease;
-    transition: background-color 500ms ease, margin .2s ease, border-radius .2s ease;
+    -webkit-transition: background-color var(--transitiontime) ease, margin .2s ease, border-radius .2s ease;
+    transition: background-color var(--transitiontime) ease, margin .2s ease, border-radius .2s ease;
 }
 
 .grid-ele4 h2 {
