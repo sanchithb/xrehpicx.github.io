@@ -1,52 +1,33 @@
-var buttons = document.querySelectorAll('.button');
-var previousStyleSheet;
-const getButton = (style, theme) => {
-    var b;
-    buttons.forEach((element) => {
-        if (element.getAttribute('data-style') === style && element.getAttribute('data-theme') === theme) {
-            b = element;
+/* BABY FUNCTIONSS */
+var takeFullScreen = (element) => {
+    if (element.requestFullscreen)
+        element.requestFullscreen();
+    else if (element.mozRequestFullScreen)
+        element.mozRequestFullScreen();
+    else if (element.webkitRequestFullscreen)
+        element.webkitRequestFullscreen();
+    else if (element.msRequestFullscreen)
+        element.msRequestFullscreen();
+}
+const reStyle = () => {
+    var m = document.getElementById('exclude');
+    m.media = 'none';
+    setTimeout(() => m.media = '', 200);
+};
+const setCSSvar = (property, value) => {
+    property = '--' + property;
+    document.documentElement.style
+        .setProperty(property, value);
+};
+const setStyle = (styleID, theme) => {
+    let style;
+    styles.forEach(element => {
+        if (styleID == element.styleName) {
+            style = element;
         }
     });
-    return b;
+    style.theme = theme;
 }
-var styles = [
-    {
-        styleName: 'flat',
-        theme: 'dark',
-        'dark': {
-            bgtheme: 'black',
-            textColor: 'white',
-            buttonbg: 'white',
-            buttontext: 'black',
-        },
-        'light': {
-            bgtheme: 'white',
-            textColor: 'black',
-            buttonbg: 'black',
-            buttontext: 'white',
-        },
-        state: 1,
-    },
-    {
-        styleName: 'material',
-        theme: 'dark',
-        dark: {
-            bgtheme: '#000a12',
-            lightbgtheme: '#4f5b62',
-            textColor: 'white',
-            buttonbg: '#0039cb',
-            buttontext: 'white',
-        },
-        light: {
-            bgtheme: '#ffffff',
-            lightbgtheme: '#c7c7c7',
-            textColor: 'black',
-            buttonbg: '#2962ff',
-            buttontext: 'white',
-        },
-        state: 0
-    }
-]
 const changeStyleSheet = styleSheet => {
     previousStyleSheet = styleSheet;
     styleSheet = './CSS/' + styleSheet + '.css'
@@ -54,10 +35,16 @@ const changeStyleSheet = styleSheet => {
     styles.href = styleSheet;
 };
 
-const reloadStyle = () => {
-    var Style = styles.reduce((newest, style) => {
-        return (newest.state || 0) > style.state ? newest : style;
-    }, {});
+
+
+/* THE ONE HUGE FUNTION */
+const reloadStyle = (name) => {
+    var Style;
+    styles.forEach(e => {
+        if (e['styleName'] === name) {
+            Style = e;
+        }
+    });
     const setFlat = (t) => {
         console.log(Style[t]);
         setCSSvar('bgtheme', Style[t].bgtheme);
@@ -65,18 +52,27 @@ const reloadStyle = () => {
         setCSSvar('buttonbg', Style[t].buttonbg);
         setCSSvar('buttontext', Style[t].buttontext);
     }
-    const setMaterial=(t)=>{
+    const setMaterial = (t) => {
         setCSSvar('bgtheme', Style[t].bgtheme);
         setCSSvar('lightbgtheme', Style[t].lightbgtheme)
         setCSSvar('buttonbg', Style[t].buttonbg);
         setCSSvar('textColor', Style[t].textColor);
         setCSSvar('buttontext', Style[t].buttontext);
     }
-
-
+    const setMinimal = (t) => {
+        setCSSvar('bgtheme', Style[t].bgtheme);
+        setCSSvar('textColor', Style[t].textColor);
+        setCSSvar('buttontext', Style[t].buttontext);
+    }
     if (Style.styleName === 'flat') {
         if (Style.styleName != previousStyleSheet) {
+            if (previousStyleSheet === 'minimal') {
+                listenerfix();
+                removeScript(minimalScripts);
+                reStyle();
+            }
             changeStyleSheet(Style.styleName);
+
         }
         if (Style.theme === 'dark') {
             setFlat(Style.theme);
@@ -90,7 +86,13 @@ const reloadStyle = () => {
         }
     } else if (Style.styleName === 'material') {
         if (Style.styleName != previousStyleSheet) {
+            if (previousStyleSheet === 'minimal') {
+                listenerfix();
+                removeScript(minimalScripts);
+                reStyle();
+            }
             changeStyleSheet(Style.styleName);
+
         }
 
         if (Style.theme === 'dark') {
@@ -103,27 +105,34 @@ const reloadStyle = () => {
             setCSSvar('materialdarkbutton', '1%');
             setCSSvar('materiallightbutton', '2%');
         }
+    } else if (Style.styleName === 'minimal') {
+
+        if (Style.styleName != previousStyleSheet) {
+            changeStyleSheet(Style.styleName);
+            getScripts(minimalScripts);
+        }
+        if (Style.theme === 'dark') {
+            setMinimal(Style.theme);
+            setCSSvar('minimaldarkbuttontext', '1.3em');
+            setCSSvar('minimallightbuttontext', '1em');
+        }
+        else if (Style.theme === 'light') {
+            setMinimal(Style.theme);
+            setCSSvar('minimaldarkbuttontext', '1em');
+            setCSSvar('minimallightbuttontext', '1.3em');
+        }
     }
 };
-const setCSSvar = (property, value) => {
-    property = '--' + property;
-    document.documentElement.style
-        .setProperty(property, value);
-};
-const setStyle = (styleID, theme) => {
-    styles[styleID].theme = theme;
-    styles[styleID].state = Date.now() / 1000;
-}
+
 buttons.forEach(b => {
     b.addEventListener('click', () => {
         let style = b.getAttribute('data-style');
         let theme = b.getAttribute('data-theme');
-        if (style === 'flat') {
-            setStyle(0, theme);
-        } else if (style == 'material') {
-            setStyle(1, theme);
-        }
-        reloadStyle();
+        setStyle(style, theme);
+        reloadStyle(style);
+
     });
 })
 
+
+/* takeFullScreen(document.querySelector('body')); */
