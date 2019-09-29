@@ -1,4 +1,6 @@
-
+:root {
+    --main-navbar-width: 0vw;
+}
 
 * {
     margin: 0;
@@ -13,6 +15,11 @@
 body {
     --transitiontime: 250ms;
     background: var(--bgtheme);
+}
+
+.holder {
+    display: grid;
+    grid-template-columns: calc(100vw - var(--main-navbar-width)) var(--main-navbar-width);
 }
 
 main {

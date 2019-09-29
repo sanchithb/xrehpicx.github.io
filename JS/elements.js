@@ -1,3 +1,5 @@
+var mainNav=document.getElementsByClassName('holder');
+
 var curtain = document.querySelector('.main-cover');
 var ele1Cover = document.querySelector('.ele1-cover');
 var ele2Cover = document.querySelector('.ele2-cover');
