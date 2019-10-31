@@ -4,56 +4,55 @@
     font-family: Nexa;
     color: #D4D4D4;
 }
-.cover{
+
+.cover {
     position: absolute;
     width: 0%;
     height: 100vh;
     background: #D4D4D4;
 }
-@media (min-device-width:600px) {
 
-    body {
-        background: #000815;
-    }
-
-    main {
-        width: 100%;
-        height: 100vh;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 90% 10%;
-        background: #000815;
-    }
-
-    .title {
-        grid-column: 1/3;
-        padding: 20px;
-        font-size: 2em;
-    }
-
-    .options {
-        grid-column: 1/3;
-        padding: 20px;
-        list-style: none;
-        display: flex;
-    }
-
-    .decide,
-    .about-btn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: underline;
-        cursor: pointer;
-    }
-
-    .about-btn {
-        margin-left: auto;
-    }
-
+body {
+    background: #c5cbd5;
 }
 
-@media (max-device-width:600px) {
+main {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 90% 10%;
+    background: #000815;
+}
+
+.title {
+    grid-column: 1/3;
+    padding: 20px;
+    font-size: 3em;
+}
+
+.options {
+    grid-column: 1/3;
+    padding: 20px;
+    list-style: none;
+    display: flex;
+}
+
+.decide,
+.about-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.about-btn {
+    margin-left: auto;
+}
+
+
+@media only screen and (max-width: 600px) {
     body {
         background: #000815;
     }
@@ -63,7 +62,7 @@
         height: 100vh;
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 90% 10%;
+        grid-template-rows: 80% 20%;
         background: #000815;
     }
 
@@ -72,26 +71,14 @@
         padding: 20px;
         font-size: 2em;
     }
-
-    .options {
-        grid-column: 1/3;
-        padding: 20px;
-        list-style: none;
+    .options{
         display: flex;
         flex-direction: column;
     }
-
-    .decide,
-    .about-btn {
+    .btn{
+        width: 100%;
+        padding: 10px;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: underline;
-        background: black;
+        justify-content: left;
     }
-
-    .about-btn {
-        margin-left: auto;
-    }
-
 }

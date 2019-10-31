@@ -1,4 +1,4 @@
-const t = new TimelineMax();
+
 
 const decide = document.querySelector('.decide');
 decide.addEventListener('click', () => {
