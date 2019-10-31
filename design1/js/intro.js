@@ -10,8 +10,13 @@ const transitionToSomePageOld = (ss = 1, es = 1) => {
 };
 const transitionToSomePage = () => {
     console.log('ran');
-    t.to(title, 1, { y: '-100%', onComplete: () => { decide.style.textDecoration = 'none'; decide.style.fontWeight = "900"; }, ease: Power4.easeIn })
-        .to(decide, 1, { y: '-90vh', fontSize: '2em', ease: Power4.easeInOut }, '-=.5')
+    t.to(title, 1, { y: '-100%', onComplete: () => { 
+        decide.style.textDecoration = 'none'; 
+        decide.style.fontWeight = "900";
+        document.body.style.transition='transform .4s ease-in-out';
+        document.body.style.transform = 'translateY(-100vh)';
+    }, ease: Power4.easeIn })
+        .to(decide, 1, { y: window.mobilecheck() || window.mobileAndTabletcheck() ? '-80vh' : '-90vh', fontSize: '2em', ease: Power1.easeInOut }, '-=.2')
         .to(aboutBtn, 1, { opacity: '0' }, '-=1');
 };
 introFadeIn();
