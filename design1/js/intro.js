@@ -20,4 +20,4 @@ const transitionToSomePage = () => {
         .to(aboutBtn, 1, { opacity: '0' }, '-=1');
 };
 introFadeIn();
-transitionToSomePage();
+//transitionToSomePage();
