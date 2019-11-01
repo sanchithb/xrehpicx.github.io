@@ -26,5 +26,5 @@ intro()()();
 sendBtn.addEventListener('click', () => {
     t.to('.hey-reply', .4, { opacity: '0', ease: Power4.EaseInOut })
         .to('.send-btn', .4, { opacity: '0', ease: Power4.EaseInOut }, '-=.4')
-        .to('.reply', 1, { bottom: '-10px', left: '-10px', height: '150vh', width: '150vw', ease: Power4.EaseInOut, onComplete: () => { location.href = '/about.html' } }, '-=.4')
+        .to('.reply', 1, { bottom: '-10px', left: '-10px', height: '150vh', width: '150vw', ease: Power4.EaseInOut, onComplete: () => { location.href = '/design2/about.html' } }, '-=.4')
 });
