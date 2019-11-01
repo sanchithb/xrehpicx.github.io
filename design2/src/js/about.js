@@ -38,7 +38,7 @@ function show() {
         .to(img, time, { opacity: '0', onComplete: () => img.src = './assets/img/arr2/img2.jpg' }, '+=1')
         .to(img, time, { opacity: '1' })
         .to(img, time, { opacity: '0', onComplete: () => img.src = './assets/img/rose.png' })
-        .to(img, time, { opacity: '1' })
+        .to(img, time, { opacity: '1' },'+=.3')
         .to('.wish', 1, { opacity: '1', onComplete: () => document.querySelector('.filter').style.background ='rgba(0, 0, 0, 0.6)' })
         .to('.thankyou', 1, { opacity: '1' }, '-=1');
         
