@@ -1,0 +1,256 @@
+@font-face {
+    font-family: gilroy;
+    src: url(./fonts/Gilroy-Medium.ttf);
+}
+
+:root {
+    --accent: rgb(0, 204, 227);
+    --offwhite: rgba(255, 255, 255, 0.884);
+    --headingTextColors: white;
+    --darkerBackground: rgb(8, 8, 10);
+    --lighterBackground: rgb(15, 15, 20);
+}
+
+
+::-webkit-scrollbar {
+    /* -webkit-appearance: none; */
+    width: 4px;
+    height: 10px;
+
+}
+
+::-webkit-scrollbar-track {
+    /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 1); */
+    background: rgb(15, 15, 20);
+    border-radius: 0px;
+}
+
+
+::-webkit-scrollbar-thumb {
+    width: 10px;
+    height: auto;
+    border-radius: 2px;
+    background-color: rgba(0, 0, 0, .5);
+    background: var(--accent);
+    /* -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5); */
+}
+
+
+@function v($var) {
+    @return var(#{$var});
+}
+
+@mixin flexcenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: gilroy;
+    color: v(--headingTextColors);
+}
+
+body {
+    background: v(--darkerBackground);
+    overflow: auto;
+}
+
+.intro-cover {
+    @include flexcenter;
+    background: v(--accent);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 10;
+    pointer-events: none;
+
+    .intro-message {
+        @include flexcenter;
+        flex-direction: column;
+        opacity: 0;
+
+        h1 {
+            font-size: 4rem;
+        }
+    }
+
+    .loading {
+        opacity: 0;
+        margin: 10px;
+    }
+}
+
+header {
+    padding: 50px;
+    position: relative;
+
+    .title {
+        font-size: 2rem;
+
+        h1 {
+            color: v(--accent);
+        }
+    }
+
+    p {
+        font-size: 2rem;
+        line-height: 2.5rem;
+        color: v(--offwhite);
+    }
+
+    /* .header-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 200px;
+        z-index: -10;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: rotate(180deg);
+        }
+    } */
+}
+
+.projects-section-titile {
+    padding-left: 50px;
+}
+
+.projects {
+    padding: 50px;
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+
+
+    .project {
+
+        position: relative;
+        width: 320px;
+        margin-bottom: 20px;
+
+
+        a {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+
+            cursor: pointer;
+        }
+
+        .project-img {
+            width: 300px;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 6px solid var(--lighterBackground);
+            @include flexcenter;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+        }
+
+        .title {
+            width: 100%;
+            margin-top: 10px;
+            margin-left: 6px;
+
+            h1 {
+                text-shadow: 0px 0px 10px black;
+            }
+
+            p {
+                letter-spacing: 1px;
+                margin-top: 5px;
+                color: v(--offwhite);
+                width: auto;
+            }
+        }
+
+    }
+
+    :first-child {
+        margin-left: 0;
+    }
+}
+
+footer {
+    /* position: absolute;
+    bottom: 0; */
+    width: auto;
+    padding: 50px;
+    background: v(--lighterBackground);
+
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+        margin-bottom: 10px;
+    }
+
+    .links {
+        a {
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            color: v(--accent);
+        }
+
+        h1 {
+            font-size: 1.5rem;
+
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+
+    .intro-cover {
+        .intro-message {
+            padding: 30px;
+        }
+        .loading{
+            margin-right: auto;
+            margin-left: 0;
+            
+            p{
+                text-align: left;
+            }
+        }
+    }
+
+    header {
+        padding: 30px;
+        padding-top: 50px;
+
+        .title {
+            font-size: 1.5rem;
+        }
+    }
+
+    footer {
+        padding-left: 30px;
+
+    }
+
+    .projects-section-titile {
+        padding-left: 30px;
+    }
+
+    .projects {
+        padding: 30px;
+    }
+}
